@@ -1,7 +1,6 @@
-# Cadi Howley <small>portfolio</small>
+# Cadi Howley
 
 > A collection of projects
 
-
 [GitHub](https://github.com/cadihowley)
-[Get Started](README.md)
+[Get Started](../README.md)
