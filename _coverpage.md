@@ -4,4 +4,4 @@
 
 
 [GitHub](https://github.com/cadihowley)
-[Get Started](#docsify)
+[Get Started](README.md)
