@@ -1,3 +1,3 @@
 # About Me
 
-> An awesome project.
+> ChiChi's awesome project
