@@ -1,6 +1,6 @@
-# Cadi Howley <small>portfolio</small>
+# Cadi Howley <small>writer</small>
 
-- A collection of projects
+> Portfolio
 
 [GitHub](https://github.com/cadihowley)
 [About Me](README.md)

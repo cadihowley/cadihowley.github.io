@@ -1,17 +1,24 @@
 # Tutorial 
-Using the iPad Pro with the Raspberry Pi for the ultimate web development environment
 
-In this tutorial we'll be setting up a headless Raspberry Pi (no monitor attached) to run Linux Ubuntu 20.04 with the LXDE desktop environment. We'll access our Raspberry Pi from the iPad through a combination of the Shelly terminal app, Microsoft's Remote Desktop app, and the Files app. We'll be using Code-OSS as our integrated development environment. Code-OSS is the open-source code Microsoft's VSCode is based on, so it may look familiar to you. 
+## Web development on the iPad
 
-What you'll need: 
+While there are online integrated development environments (IDE) out there (such as GitPod or Codesandbox), these still have some limitations on the iPad - the biggest one being the inability to copy and paste.
+
+In this tutorial we'll be using the iPad to interface with a Raspberry Pi 4 running Code-OSS as the IDE. Code-OSS is the open-source code Microsoft's VSCode is based on, so it may look familiar to you!
+
+
+We'll begin by setting up a Raspberry Pi headless (no monitor attached) to run Linux Ubuntu 20.04 with the LXDE desktop environment. We'll access our Raspberry Pi from the iPad through a combination of the Shelly terminal app, Microsoft's Remote Desktop app, and the Files app. 
+
+## What you'll need: 
 - A Raspberry Pi 4 with at least 4GB RAM
-- A microSD, minimum 16GB
-- A solid-state drive (SSD) to use as a default drive instead of the microSD card (optional, but highly recommended)
+- A MicroSD card, minimum 16GB
+- A MicroSD Card Reader for the computer
+- A solid-state drive (SSD) to use as a default drive instead of the microSD card (optional, but highly recommended - see [here](https://www.maketecheasier.com/sd-card-vs-ssd/))
 - A computer (Mac, Windows or Linux) with [Balena Etcher](https://www.balena.io/etcher/) installed
-- MicroSD Card Reader for the computer
 - Internet connectivity, either via ethernet cable or Wifi network
-- Microsoft Remote Desktop app installed on your iPad
-- Shelly (pro - free trial) app installed on your iPad
+- The [Microsoft Remote Desktop](https://apps.apple.com/us/app/remote-desktop-mobile/id714464092#?platform=ipad) app installed on your iPad
+- The [Shelly - SSH Client](https://apps.apple.com/us/app/shelly-ssh-client/id989642999) app installed on your iPad (free trial of the Pro features)
+- A bluetooth keyboard and mouse for your iPad (optional)
 
 
 ## Installing Linux 
@@ -34,7 +41,8 @@ To enable the Raspberry Pi to connect to the WIFI network on startup, we will ne
 1. In a file explorer, navigate to the SD card (and solid-state drive, if using) you just flashed the image onto. 
 2. Find the "system-boot" partition, and then open the ```network-config``` file. 
 3. Find the ```wifis``` section, and remove the hash at the beginning. Change ```<wifi network name>``` to your wifi network name, and ```<wifi password>``` to your wifi password
- ````bash
+
+ ````
 wifis:
   wlan0:
   dhcp4: true
@@ -44,10 +52,10 @@ wifis:
       password: "<wifi password>"
 ````
 
->:exclamation: **Important** If your wifi network has spaces in the name, use quotation marks around the name.
+>:exclamation: **Important** If your wifi network has spaces in its name, use quotation marks around the network name.
 
 
-4. Save the file, and remove the SD Card from your computer. 
+4. Save the file, and remove the SD Card (and SSD drive) from your computer. 
 
 ### Booting up the Raspberry Pi
 
@@ -64,7 +72,7 @@ We will need to find the IP address of the Raspberry Pi before we can access it.
 1. Open the Shelly app. On the left pane, next to Connections, click on the **+**
 2. On the main pane in the SSH Server Address field, type ubuntu@xxx.xxx.x.xxx, replacing the x's with your Pi's IP address. 
 3. Leave the port at 22, and press **Connect**.
-4. When you are asked to confirm the connection, type yes, and then press ```Return``` on your keyboard. 
+4. When you are asked to confirm the connection, type yes, and then press Return (<kbd>&#8629;</kbd>)  on your keyboard. 
 5. The default password is 'ubuntu'. You will be prompted to change this the first time you connect. The cursor will not move as you type the passwords. 
 
 ![Using the Shelly app](../assets/img/shelly.gif)
@@ -72,6 +80,8 @@ We will need to find the IP address of the Raspberry Pi before we can access it.
 
 ?> **Tip** To save your log in credentials, click on **Settings ** on the right side of the Shelly app. In the username field, type ```ubuntu``` and in the password field, enter the password you set up during the previous step. Now Shelly will automatically use those credentials to log you in every time you open the connection.
 
+> :exclamation: **Important**
+> You must enable location settings to run in the background, otherwise Shelly will close the connection any time you are not in the app.
 
 
 When you start a new connection, you should see:
@@ -83,7 +93,7 @@ This is the command line. The ```~``` means you are in  the home directory. For 
 
 >:exclamation: **Important** 
 >
-> If you are using an SSD,before proceeding further, it's important to ensure the Raspberry Pi will use the SSD instead of the microSD when it boots. 
+> Before proceeding further,if you are using an SSD it's important to ensure the Raspberry Pi will use the SSD instead of the microSD when it boots. 
 >
 > When you start a new connection to the Pi, there is a line in the terminal which says ```Usage of /:```. This will make it easy to see which drive it has booted into. 
 >
@@ -98,7 +108,6 @@ This is the command line. The ```~``` means you are in  the home directory. For 
 > To change the SD card partition name, type the following into the command line:
 >
 > ````bash
->
 >sudo e2label /dev/mmcblk0p2 NEWNAME
 >```` 
 >
@@ -145,17 +154,13 @@ On the command line:
 sudo apt install xrdp
 ````
 
-Once we have xrdp installed, open the Microsoft Remote Desktop app (RD Client).
+Once we have xrdp installed, open the Microsoft Remote Desktop app (RD Client to set up a new Remoter Desktop:
 
-On the right side, click the **+**, then **Add PC**. A dialog will open. 
-
-Click on **PC Name** and enter the Pi's IP address. 
-
-Click on **User Account**, and enter your login credentials. This should be 'ubuntu' and the password you selected when you first connected to the Raspberry Pi via the Shelly app. 
-
-Go back, and then click **Save** in the upper right hand corner of the dialog. 
-
-You should see a new PC in the uppermost left corner. Click on this to open the Remote Desktop. 
+1. On the right side, click the **+**, then **Add PC**. A dialog will open. 
+2. Click on **PC Name** and enter the Pi's IP address. 
+3. Click on **User Account**, and enter your login credentials. This should be 'ubuntu' and the password you selected when you first connected to the Raspberry Pi via the Shelly app. 
+4. Go back, and then click **Save** in the upper right hand corner of the dialog. 
+5. You should see a new PC in the uppermost left corner. Click on this PC to open the Remote Desktop. 
 
 <img src="../assets/img/rdclient.gif" class="gif">
 
@@ -180,7 +185,8 @@ sudo -s
 > :exclamation: **Note**
 > After install, you may get a warning message about a missing GPG key when running the ```apt update``` command, something like: 
 > ````
-> The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 2696BFC88BAF9A6F
+> The following signatures couldn't be verified because the public key is not available: 
+> NO_PUBKEY 2696BFC88BAF9A6F
 > ````
 > To solve this issue, run the following on the command line, changing the 8 digit '8BAF9A6F' code to the last 8 digits of the key in the actual error message you received:
 >
@@ -189,10 +195,8 @@ sudo -s
 > ````
 
 
-
-
-Some other tools that will be useful:
 ### Samba
+
 - A Samba server allows you to access the files on your Raspberry Pi through the Files app on your iPad.
 
 To install Samba:
@@ -219,17 +223,12 @@ sudo nano /etc/samba/smb.conf
 ````
 ![Configuring Samba](../assets/img/samba_config.jpg)
 
-Use the cursor and arrow keys to go down to ``` Share Definitions```. 
-
-Change the file by deleting the ```#``` in front of ```[homes]```. 
-
-Delete the semicolon in front of ```Comment``` and ```Browsable```. Change the answer to ```Browsable``` from no to yes. 
-
-Delete the the semicolon in front of ```read only```, and change the no to a yes. 
-
-Delete the semicolon in front of ```create mask``` and ``` directory mask```, and change both numbers to 0775.
-
-When you're done editing the file, press ```Ctrl```+```x``` to exit. Press ```Y``` at the prompt, and then press return to save the file. 
+1. Use the cursor and arrow keys to go down to ``` Share Definitions```.
+2. Change the file by deleting the ```#``` in front of ```[homes]```. 
+3. Delete the semicolon in front of ```Comment``` and ```Browsable```. Change the answer to ```Browsable``` from no to yes.
+4. Delete the the semicolon in front of ```read only```, and change the no to a yes. 
+5. Delete the semicolon in front of ```create mask``` and ``` directory mask```, and change both numbers to 0775.
+6. When you're done editing the file, press Control (<kbd>&#8963;</kbd>) + <kbd>x</kbd> to exit. Press <kbd>Y</kbd> at the prompt, and then press  Return (<kbd>&#8629;</kbd>) to save the file. 
 
 Once you've finished editing the file, restart the server:
 ````
@@ -248,7 +247,6 @@ Because we set the permissions for the folder to be both read and write, you can
 To install nodejs and npm:
 
 ````
-
 sudo apt update
 sudo apt install nodejs npm
 ````
@@ -256,13 +254,8 @@ sudo apt install nodejs npm
 The apt command may not install the version you want. To get version 14 from Nodesource instead:
 
 ````
-
 curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 sudo apt install nodejs
 ````
 To install a different version, replace the 14.x in the above command with the version you want, for example, 12.x.
-
-
-
-
 

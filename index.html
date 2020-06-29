@@ -28,13 +28,44 @@
   --heading-h1-font-family: Abel;
   --base-font-family     : Abel;
   --base-font-size       : 16px;
-  --blockquote-background             : var(--mono-tint1);
+  --blockquote-background             : var(--mono-shade1);
+  
 }
   :root {
     --sidebar-width                               : 0.1rem;
-    --content-max-width                 : 100%;
-    --blockquote-border-color:red;
+    --content-max-width                 : 50em;
+    --blockquote-border-color:rgb(173, 32, 32);
+    --cover-button-background: rgba(66, 33, 66, 0.726);
+    --cover-button-border: rgba(66, 33, 66, 0.726);
+    --cover-button-primary-background: rgba(66, 33, 66, 0.726);
+    --cover-button-primary-border: rgba(66, 33, 66, 0.726);
+    --cover-blockquote-color   :black ;
+    
+    --mono-hue        : 277;
+    --mono-saturation : 23%;
+    --mono-base       : hsl(var(--mono-hue), var(--mono-saturation), 9%);
+    
+    /* Monochrome shades (darker) and tints (lighter) */
+    --mono-shade3     : hsl(var(--mono-hue), 5%, 10%); /* #333333 */
+    --mono-shade2     : hsl(var(--mono-hue), 5%, 15%); /* #4d4d4d */
+    --mono-shade1     : hsl(var(--mono-hue), 5%, 20%); /* #666666 */
+    
+    --mono-tint1      : hsl(var(--mono-hue), 5%, 30%); /* #b3b3b3 */
+    --mono-tint2      : hsl(var(--mono-hue), 5%, 35%); /* #e3e3e3 */
+    --mono-tint3      : hsl(var(--mono-hue), 5%, 40%); /* #f7f7f7 */
+    
+    --theme-hue       : 277;
+    --theme-saturation: 23%;
+    --theme-lightness : 5%;
+    --theme-color     : hsl(var(--theme-hue), var(--theme-saturation), var(--theme-lightness));
   }
+    .github-corner svg {
+  height: 70px;
+  width: 70px;
+  fill: white;
+  color: black;
+}
+  
  
 </style>
 </head>
@@ -55,7 +86,7 @@
       //onlyCover: true,
       subMaxLevel: 2,
       //loadSidebar: true,
-      basePath: '/cadihowley.github.io/'
+      //basePath: '/cadihowley.github.io/'
     }
   </script>
   
