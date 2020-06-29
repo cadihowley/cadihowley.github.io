@@ -20,4 +20,5 @@ Prototypes can be seen here: [Sphinx & ReadtheDocs](http://scumm-thedocs.rtfd.io
 
 # Writing Samples
 
-[Tutorial](writing/tutorial.md): Using the Raspberry Pi to transform your iPad into the ultimate web development machine.
+Tutorials: 
+- [Web development on the iPad](writing/tutorial.md)
