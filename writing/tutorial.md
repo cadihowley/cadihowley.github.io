@@ -14,7 +14,9 @@ What you'll need:
 - Shelly (pro - free trial) app installed on your iPad
 
 
-## Installing Linux Ubuntu 20.04 onto the Raspberry Pi
+## Installing Linux 
+
+In this step we will install Ubuntu 20.04 Server to the Raspberry Pi
 
 ### Preparing the SD card:
 1. Download the Ubuntu 20.04 image from the [Ubuntu](https://ubuntu.com/download/raspberry-pi) website onto your computer.
@@ -32,7 +34,7 @@ To enable the Raspberry Pi to connect to the WIFI network on startup, we will ne
 1. In a file explorer, navigate to the SD card (and solid-state drive, if using) you just flashed the image onto. 
 2. Find the "system-boot" partition, and then open the ```network-config``` file. 
 3. Find the ```wifis``` section, and remove the hash at the beginning. Change ```<wifi network name>``` to your wifi network name, and ```<wifi password>``` to your wifi password
- ````
+ ````bash
 wifis:
   wlan0:
   dhcp4: true
@@ -41,8 +43,8 @@ wifis:
     <wifi network name>:
       password: "<wifi password>"
 ````
-<?Important
-If your wifi network has spaces in the name, use quotation marks around the name.
+
+>:exclamation: **Important** If your wifi network has spaces in the name, use quotation marks around the name.
 
 
 4. Save the file, and remove the SD Card from your computer. 
@@ -55,8 +57,8 @@ It's time to power up the Pi! Insert the microSD card, plug in the solid-state d
 
 We will need to find the IP address of the Raspberry Pi before we can access it. For more information on how to find the IP addresses of devices on your network, see this helpful [how-to article](https://helpdeskgeek.com/how-to/determine-computers-connected-to-wireless-network/). 
 
-<? **Tip**
-It is a good idea to ensure that your router assigns a static IP address to your Raspberry Pi, so you don't have to look up the IP address every time the Pi reconnects to the network. For a great explanation on how to assign static IP addresses, see [this article](https://au.pcmag.com/news/65062/how-to-set-up-a-static-ip-address). 
+?> **Tip** It is a good idea to ensure that your router assigns a static IP address to your Raspberry Pi, so you don't have to look up the IP address every time the Pi reconnects to the network. For a great explanation on how to assign static IP addresses, see [this article](https://au.pcmag.com/news/65062/how-to-set-up-a-static-ip-address)
+
 
 
 1. Open the Shelly app. On the left pane, next to Connections, click on the **+**
@@ -65,10 +67,11 @@ It is a good idea to ensure that your router assigns a static IP address to your
 4. When you are asked to confirm the connection, type yes, and then press ```Return``` on your keyboard. 
 5. The default password is 'ubuntu'. You will be prompted to change this the first time you connect. The cursor will not move as you type the passwords. 
 
-![Using the Shelly app](../img/shelly.gif)
+![Using the Shelly app](../assets/img/shelly.gif)
 
-<? **Tip**
-To save your log in credentials, click on **Settings ** on the right side of the Shelly app. In the username field, type ```ubuntu``` and in the password field, enter the password you set up during the previous step. Now Shelly will automatically use those credentials to log you in every time you open the connection.
+
+?> **Tip** To save your log in credentials, click on **Settings ** on the right side of the Shelly app. In the username field, type ```ubuntu``` and in the password field, enter the password you set up during the previous step. Now Shelly will automatically use those credentials to log you in every time you open the connection.
+
 
 
 When you start a new connection, you should see:
@@ -78,28 +81,32 @@ ubuntu@ubuntu:~$
 This is the command line. The ```~``` means you are in  the home directory. For more information on the command line and how it works, this [excellent article](#) is a good reference. 
 
 
-<! **Important**
-If you are using an SSD:
+>:exclamation: **Important** 
+>
+> If you are using an SSD,before proceeding further, it's important to ensure the Raspberry Pi will use the SSD instead of the microSD when it boots. 
+>
+> When you start a new connection to the Pi, there is a line in the terminal which says ```Usage of /:```. This will make it easy to see which drive it has booted into. 
+>
+> By default, the Pi boots from a partition called "writeable". However, if you have both the SD card and the SSD connected and they both have "writeable" partitions, the pi will boot into whichever volume it picks up first. To prevent this from happening, enter the following into the command line:
+>
+> ````bash
+> lsblk -o +LABEL
+> ````
+>
+> You should see two disk devices: sda (the SSD) and mmcblk0 (the SD card). Under the LABEL column, you will see both have partitions called writeable.
+>
+> To change the SD card partition name, type the following into the command line:
+>
+> ````bash
+>
+>sudo e2label /dev/mmcblk0p2 NEWNAME
+>```` 
+>
+>In this example, NEWNAME is what you want to call the partition. I named mine SDWriteable, but any name will do. 
+>Run ```lsblk -o +LABEL``` again, and check that the new LABEL of the SD card is whatever you changed it to. 
+>
+>Run ```sudo reboot``` and check that the Pi is using the SSD. If the first time you connected to the Pi was when you were accessing Ubuntu on the SD card, you will need to reset the default 'ubuntu' password when you access Ubuntu on the SSD for the first time. 
 
-Before proceeding further, it's important to ensure the Raspberry Pi will use the SSD instead of the microSD when it boots. 
-
-When you start a new connection to the Pi, there is a line in the terminal which says ```Usage of /:```. This will make it easy to see which drive it has booted into. 
-
-By default, the Pi boots from a partition called "writeable". However, if you have both the SD card and the SSD connected and they both have "writeable" partitions, the pi will boot into whichever volume it picks up first. To prevent this from happening, enter the following into the command line:
-````
-lsblk -o +LABEL
-````
-You should see two disk devices: sda (the SSD) and mmcblk0 (the SD card). Under the LABEL column, you will see both have partitions called writeable. 
-
-To change the SD card partition name, type the following into the command line:
-````
-sudo e2label /dev/mmcblk0p2 NEWNAME
-```` 
-In this example, NEWNAME is what you want to call the partition. I named mine SDWriteable, but any name will do. 
-Run ```lsblk -o +LABEL``` again, and check that the new LABEL of the SD card is whatever you changed it to. 
-
-Run ```sudo reboot``` and check that the Pi is using the SSD. If the first time you connected to the Pi was when you were accessing Ubuntu on the SD card, you will need to reset the default 'ubuntu' password when you access Ubuntu on the SSD for the first time. 
-::: 
 
 
 ### Installing a desktop environment
@@ -150,7 +157,7 @@ Go back, and then click **Save** in the upper right hand corner of the dialog.
 
 You should see a new PC in the uppermost left corner. Click on this to open the Remote Desktop. 
 
-![Using RD Client](../img/rdclient.gif)
+<img src="../assets/img/rdclient.gif" class="gif">
 
 Welcome to your new Linux desktop!
 
@@ -167,21 +174,20 @@ sudo -s
 . <( wget -O - https://code.headmelted.com/installers/apt.sh )
 ````
 
-<? **Tip**
-The ```sudo -s``` command switches the entire terminal session into "superuser", or root, mode. In general, you should be careful using this command, as some things should not be done in superuser mode. 
-:::
+?> **Tip** The ```sudo -s``` command switches the entire terminal session into "superuser", or root, mode. In general, you should be careful using this command, as some things should not be done in superuser mode. 
 
-<? **Note**
-After install, you may get a warning message about a missing GPG key when running the ```apt update``` command, something like: 
-````
-The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 2696BFC88BAF9A6F
-````
-To solve this issue, run the following on the command line, changing the 8 digit '8BAF9A6F' code to the last 8 digits of the key in the actual error message you received:
 
-````
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv-keys 8BAF9A6F
-````
-:::
+> :exclamation: **Note**
+> After install, you may get a warning message about a missing GPG key when running the ```apt update``` command, something like: 
+> ````
+> The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 2696BFC88BAF9A6F
+> ````
+> To solve this issue, run the following on the command line, changing the 8 digit '8BAF9A6F' code to the last 8 digits of the key in the actual error message you received:
+>
+> ````
+> sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv-keys 8BAF9A6F
+> ````
+
 
 
 
@@ -211,9 +217,13 @@ Next, we'll edit the Samba configuration file:
 ````
 sudo nano /etc/samba/smb.conf
 ````
+![Configuring Samba](../assets/img/samba_config.jpg)
+
 Use the cursor and arrow keys to go down to ``` Share Definitions```. 
 
-Change the file by deleting the ```#``` in front of ```[homes]```. Delete the semicolon in front of ```Comment``` and ```Browsable```. Change the answer to ```Browsable``` from no to yes. 
+Change the file by deleting the ```#``` in front of ```[homes]```. 
+
+Delete the semicolon in front of ```Comment``` and ```Browsable```. Change the answer to ```Browsable``` from no to yes. 
 
 Delete the the semicolon in front of ```read only```, and change the no to a yes. 
 
