@@ -78,7 +78,7 @@ We will need to find the IP address of the Raspberry Pi before we can access it.
 ![Using the Shelly app](../assets/img/shelly.gif)
 
 
-?> **Tip** To save your log in credentials, click on **Settings ** on the right side of the Shelly app. In the username field, type ```ubuntu``` and in the password field, enter the password you set up during the previous step. Now Shelly will automatically use those credentials to log you in every time you open the connection.
+?> **Tip** To save your log in credentials, click on **Settings** on the right side of the Shelly app. In the username field, type ```ubuntu``` and in the password field, enter the password you set up during the previous step. Now Shelly will automatically use those credentials to log you in every time you open the connection.
 
 > :exclamation: **Important**
 > You must enable location settings to run in the background, otherwise Shelly will close the connection any time you are not in the app.
