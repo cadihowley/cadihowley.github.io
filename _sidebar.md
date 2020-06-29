@@ -3,4 +3,4 @@
 
 
 * Writing Samples
-* [Tutorial](../writing/tutorial.md)
+* [Tutorial](writing/tutorial.md)
