@@ -21,7 +21,7 @@ Prototypes can be seen here: [Sphinx & ReadtheDocs](http://scumm-thedocs.rtfd.io
 # Writing Samples
 
 Tutorials: 
-- [Web development on the iPad](writing/tutorial.md)
+- <a href="/writing/tutorial.md" target="_blank"> Web development on the iPad</a>
 
 Manuals:
 - <a href="/assets/files/ops_manual.pdf" target="_blank">Excerpt - Flight Crew Operating Manual</a>
