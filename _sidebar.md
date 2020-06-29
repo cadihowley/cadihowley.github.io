@@ -1,5 +1,5 @@
 * About Me
-* [Projects](../README.md)
+* [Projects](README.md)
 
 
 * Writing Samples

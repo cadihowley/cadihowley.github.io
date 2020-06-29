@@ -3,5 +3,5 @@
 - A collection of projects
 
 [GitHub](https://github.com/cadihowley)
-[About Me](../README.md)
+[About Me](#)
 
