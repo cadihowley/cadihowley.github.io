@@ -75,7 +75,7 @@ We will need to find the IP address of the Raspberry Pi before we can access it.
 4. When you are asked to confirm the connection, type yes, and then press Return (<kbd>&#8629;</kbd>)  on your keyboard. 
 5. The default password is 'ubuntu'. You will be prompted to change this the first time you connect. The cursor will not move as you type the passwords. 
 
-![Using the Shelly app](../assets/img/shelly.gif)
+<img src="/assets/img/shelly.gif" class="gif">
 
 
 ?> **Tip** To save your log in credentials, click on **Settings** on the right side of the Shelly app. In the username field, type ```ubuntu``` and in the password field, enter the password you set up during the previous step. Now Shelly will automatically use those credentials to log you in every time you open the connection.

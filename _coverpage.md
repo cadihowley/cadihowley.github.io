@@ -1,4 +1,4 @@
-# Cadi Howley <small>writer</small>
+# Cadi Howley <small>tech writer</small>
 
 > Portfolio
 
