@@ -93,9 +93,11 @@ This is the command line. The ```~``` means you are in  the home directory. For 
 
 >:exclamation: **Important** 
 >
-> Before proceeding further,if you are using an SSD it's important to ensure the Raspberry Pi will use the SSD instead of the microSD when it boots. 
+> Before proceeding further:
 >
-> When you start a new connection to the Pi, there is a line in the terminal which says ```Usage of /:```. This will make it easy to see which drive it has booted into. 
+>It is important if you are using an SSD to ensure the Raspberry Pi will use the SSD instead of the microSD when it boots. 
+>
+> When you start a new connection to the Pi, there is a line in the terminal that says ```Usage of /:```. This shows how much space is available on the drive. Use this information to see which drive it has booted into.
 >
 > By default, the Pi boots from a partition called "writeable". However, if you have both the SD card and the SSD connected and they both have "writeable" partitions, the pi will boot into whichever volume it picks up first. To prevent this from happening, enter the following into the command line:
 >
@@ -168,7 +170,7 @@ Welcome to your new Linux desktop!
 
 ## Installing useful tools
 
-LXDE is a very bare-bones desktop, with very few additional programs installed. This is great for the Raspberry Pi, since it's extremely lightweight. However, to use this as our web development machine, we will need to install a few things first!
+LXDE is a very bare-bones desktop, with very few additional programs installed. This is great for the Raspberry Pi, since it's extremely lightweight. However, to use this as our web development machine we will need to install a few things first!
 
 ### Code-OSS
 
