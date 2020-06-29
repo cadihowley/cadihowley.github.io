@@ -23,6 +23,9 @@ Prototypes can be seen here: [Sphinx & ReadtheDocs](http://scumm-thedocs.rtfd.io
 Tutorials: 
 - [Web development on the iPad](writing/tutorial.md)
 
+Manuals:
+- <a href="/assets/files/ops_manual.pdf" target="_blank">Excerpt - Flight Crew Operating Manual</a>
+
 # Contact Me <a id="contact"></a>
 
 <svg style="width:24px;height:24px" viewBox="0 0 24 24">
