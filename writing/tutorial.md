@@ -88,18 +88,18 @@ When you start a new connection, you should see:
 ````
 ubuntu@ubuntu:~$
 ````
-This is the command line. The ```~``` means you are in  the home directory. For more information on the command line and how it works, this [excellent article](#) is a good reference. 
+This is the command line. The ```~``` means you are in  the home directory. For more information on the command line and how it works, this [excellent article](https://ubuntu.com/tutorials/command-line-for-beginners#1-overview) is a good reference. 
 
 
 >:exclamation: **Important** 
 >
 > Before proceeding further:
 >
->It is important if you are using an SSD to ensure the Raspberry Pi will use the SSD instead of the microSD when it boots. 
+>If you are using an SSD, it is importan to ensure that the Raspberry Pi will use the SSD instead of the microSD when it boots. 
 >
 > When you start a new connection to the Pi, there is a line in the terminal that says ```Usage of /:```. This shows how much space is available on the drive. Use this information to see which drive it has booted into.
 >
-> By default, the Pi boots from a partition called "writeable". However, if you have both the SD card and the SSD connected and they both have "writeable" partitions, the pi will boot into whichever volume it picks up first. To prevent this from happening, enter the following into the command line:
+> By default, the Raspberry Pi boots from a partition called "writeable". However, if you have both the SD card and the SSD connected and they both have "writeable" partitions, the Pi will boot into whichever volume it picks up first. To prevent this from happening, enter the following into the command line:
 >
 > ````bash
 > lsblk -o +LABEL
@@ -116,7 +116,7 @@ This is the command line. The ```~``` means you are in  the home directory. For 
 >In this example, NEWNAME is what you want to call the partition. I named mine SDWriteable, but any name will do. 
 >Run ```lsblk -o +LABEL``` again, and check that the new LABEL of the SD card is whatever you changed it to. 
 >
->Run ```sudo reboot``` and check that the Pi is using the SSD. If the first time you connected to the Pi was when you were accessing Ubuntu on the SD card, you will need to reset the default 'ubuntu' password when you access Ubuntu on the SSD for the first time. 
+>Run ```sudo reboot``` and check that the Pi is using the SSD. If the first time you connected to the Pi was when you were accessing Ubuntu on the SD card, you will need to reset the default 'ubuntu' password again when you access Ubuntu on the SSD for the first time. 
 
 
 
@@ -170,7 +170,7 @@ Welcome to your new Linux desktop!
 
 ## Installing useful tools
 
-LXDE is a very bare-bones desktop, with very few additional programs installed. This is great for the Raspberry Pi, since it's extremely lightweight. However, to use this as our web development machine we will need to install a few things first!
+LXDE is a  bare-bones desktop, with very few additional programs installed. This is great for the Raspberry Pi as it's extremely lightweight. However, to use this as our web development machine we will need to install a few things first!
 
 ### Code-OSS
 
@@ -206,11 +206,11 @@ To install Samba:
 ````
 sudo apt install samba
 ````
-We'll change the access permissions for the home folder. This way we can access all our files from the iPad. 
+We'll start by chaning the access permissions for the home folder. This way we can access all our files from the iPad. 
 ````
 sudo chmod 777 /home
 ````
-We'll add a user to Samba, by using:
+Next,we'll add a user to Samba:
 ````
 sudo smbpasswd -a USERNAME
 ````
@@ -218,7 +218,7 @@ In this example, you would change USERNAME to the actual username you want to ad
 
 You will be prompted to enter a password.
 
-Next, we'll edit the Samba configuration file:
+Finally, we'll edit the Samba configuration file:
 
 ````
 sudo nano /etc/samba/smb.conf
@@ -228,7 +228,7 @@ sudo nano /etc/samba/smb.conf
 1. Use the cursor and arrow keys to go down to ``` Share Definitions```.
 2. Change the file by deleting the ```#``` in front of ```[homes]```. 
 3. Delete the semicolon in front of ```Comment``` and ```Browsable```. Change the answer to ```Browsable``` from no to yes.
-4. Delete the the semicolon in front of ```read only```, and change the no to a yes. 
+4. Delete the the semicolon in front of ```read only```, and change the yes to a no. 
 5. Delete the semicolon in front of ```create mask``` and ``` directory mask```, and change both numbers to 0775.
 6. When you're done editing the file, press Control (<kbd>&#8963;</kbd>) + <kbd>x</kbd> to exit. Press <kbd>Y</kbd> at the prompt, and then press  Return (<kbd>&#8629;</kbd>) to save the file. 
 
@@ -242,22 +242,24 @@ To access the files in your home folder from the iPad, open the files app. On th
 Because we set the permissions for the folder to be both read and write, you can create, delete and edit files and folders on your Pi directly from your iPad. 
 
 
-### Node.js and npm (node package manager).
+### Node.js and npm (node package manager)
+
 - Node.js is a cross-platform javascript environment, used to build back-end and front-end applications.
 - npm is used to install a variety of static-site generators, themes, plugins, and much more.
 
 To install nodejs and npm:
 
-````
+````bash
 sudo apt update
 sudo apt install nodejs npm
 ````
 
-The apt command may not install the version you want. To get version 14 from Nodesource instead:
+The apt command may not install the version you want. To get the latest version (version 14 at time of writing) from Nodesource instead:
 
-````
+````bash
 curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 sudo apt install nodejs
 ````
+
 To install a different version, replace the 14.x in the above command with the version you want, for example, 12.x.
 
