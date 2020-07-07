@@ -156,7 +156,7 @@ On the command line:
 sudo apt install xrdp
 ````
 
-Once we have xrdp installed, open the Microsoft Remote Desktop app (RD Client to set up a new Remoter Desktop:
+Once we have xrdp installed, open the Microsoft Remote Desktop app (RD Client) to set up a new Remote Desktop:
 
 1. On the right side, click the **+**, then **Add PC**. A dialog will open. 
 2. Click on **PC Name** and enter the Pi's IP address. 
