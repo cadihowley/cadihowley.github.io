@@ -23,6 +23,9 @@ Prototypes can be seen here: [Sphinx & ReadtheDocs](http://scumm-thedocs.rtfd.io
 Tutorials: 
 - <a href="#/writing/tutorial.md" target="_blank"> Web development on the iPad</a>
 
+Installation Guide:
+- <a href="https://scumm-thedocs.readthedocs.io/en/latest/installation/raspberrypi.html" target="_blank">Installing ScummVM on the Raspberry Pi</a>
+
 Manuals:
 - <a href="/assets/files/ops_manual.pdf" target="_blank">Excerpt - Flight Crew Operating Manual</a>
 
