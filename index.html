@@ -6,39 +6,61 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <link rel="icon" href="assets/img/quote.svg" type="image/x-icon">
+  <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
   <!-- Theme: Simple Dark -->
   <link rel="stylesheet" href="assets/css/theme-simple-dark.css">
   <!-- Font Awesome-->
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <!-- Google Font-->
   <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
-
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
+  
   <style>
+   h1 {
+    font-family: 'Caveat', cursive;
+  }
+  
   .gif {
     display: block;
     margin-left: auto;
     margin-right: auto;
     object-fit: contain;
   }
+  
+  .github-corner svg {
+     height: 70px;
+     width: 70px;
+     fill: white;
+     color: black;
+  }
+
   :root {
+  /* Content*/
+
     --sidebar-width: 0.1rem;
     --content-max-width: 50em;
+
+  /* Fonts */
 
     --heading-font-family: Abel;
     --heading-h1-font-family: Abel;
     --base-font-family: Abel;
     --base-font-size: 16px;
   
+  /* Cover */
+
     --blockquote-border-color:rgb(173, 32, 32);
     --blockquote-background: var(--mono-shade1);
+    --cover-heading-font-size-max: 80;
     --cover-background-image: url("/assets/img/background.jpg");
     --cover-button-background: rgba(66, 33, 66, 0.726);
     --cover-button-border: rgba(66, 33, 66, 0.726);
     --cover-button-primary-background: rgba(66, 33, 66, 0.726);
     --cover-button-primary-border: rgba(66, 33, 66, 0.726);
-    --cover-blockquote-color   :black ;
+    --cover-blockquote-color   : white ;
   
+  /* Colours*/
+
     --mono-hue        : 277;
     --mono-saturation : 23%;
     --mono-base       : hsl(var(--mono-hue), var(--mono-saturation), 9%);
@@ -56,12 +78,7 @@
     --theme-lightness : 5%;
     --theme-color     : hsl(var(--theme-hue), var(--theme-saturation), var(--theme-lightness));
   }
-  .github-corner svg {
-     height: 70px;
-     width: 70px;
-     fill: white;
-     color: black;
-  }
+  
   </style>
 </head>
 

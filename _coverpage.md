@@ -1,2 +1,4 @@
-# Cadi Howley <small>tech writer</small>
+# Cadi Howley 
+
+> Tech Writer
 
