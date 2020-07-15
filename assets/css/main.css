@@ -1,0 +1,136 @@
+/* Site wide*/
+body {
+    font-family: 'Fira Sans', sans-serif; 
+}
+
+h2 {
+    font-family: 'Fredericka the Great', cursive;
+    margin-bottom: 3%;
+}
+
+h3, h4, h5, h6 {
+    font-family: 'Dosis', sans-serif;
+    
+}
+
+.light-section{
+    color: #2b2b28;
+    background-color: #f1d6ab;
+}
+.dark-section{
+    color: #f8f8f8;
+    background-color: #2b2b28;
+}
+/* Nav Bar*/
+
+.custom-nav {
+    background-color: #2b2b28;
+}
+
+
+
+/* Banner */
+.banner-row {
+    background-image: url("/assets/img/banner.png");
+    background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+
+  
+   
+}
+.heading-col{
+    
+    margin: 30% 10% 10%;
+}
+.banner-heading{
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 5rem;
+    color: #f8f8f8;
+    
+
+}
+.container-fluid {
+    margin:0;
+    padding:0;
+}
+
+.banner-img{
+    max-width: 100%;
+}
+
+/*My Work Section*/
+.work-heading {
+    margin-bottom: 5%;
+    font-size: 3rem;
+}
+.work-section {
+    padding: 5% 10%;
+}
+.large-row {
+    width: 100%;
+}
+/*About Me Section*/
+.about-heading {
+    margin: 0 0 5%;
+    font-size: 3rem;
+}
+
+.about-section {
+    padding: 5% 10%;
+    
+}
+.my-photo{
+    border-radius: 100%;
+    width: 200px;
+    
+
+}
+.photo-col {
+    text-align: center;
+}
+
+/* Contact Section*/
+
+.contact-heading {
+    margin:  0 0 5%;
+    font-size: 3rem;
+}
+.contact-section {
+    padding: 5% 10%;
+}
+.textarea {
+    height: 300px;
+}
+
+.submit-form {
+    margin: 5% auto;
+}
+
+.form-control {
+    margin-bottom: 5%;
+}
+/*Footer Section*/
+
+.footer-section {
+    text-align: center;
+    padding: 5%;
+}
+.fa-foot {
+    padding: 15px;
+}
+@media (max-width:766px) {
+    h2 {
+        text-align: center;
+    }
+    .heading-col{
+        text-align: center;
+    }
+
+}
+@media (max-width:766px){
+    .about-col{
+        text-align: center;
+    }
+}
