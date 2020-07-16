@@ -114,15 +114,17 @@ h3, h4, h5, h6 {
     padding: 5% 10%;
 }
 .textarea {
-    height: 300px;
+    width:100%;
 }
-
 .submit-form {
     margin: 5% auto;
 }
 
 .form-control {
     margin-bottom: 5%;
+}
+label {
+    margin-bottom: 1.5rem;
 }
 /*Footer Section*/
 

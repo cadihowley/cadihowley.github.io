@@ -31,7 +31,7 @@
       <div class="container-fluid">
       
         <!-- Navbar-->
-      <nav class="navbar navbar-expand-md navbar-dark custom-nav ">
+      <nav id="navbar" class="navbar fixed-top navbar-expand-md navbar-dark custom-nav ">
       
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -39,7 +39,10 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul class="navbar-nav ">
             <li class="nav-item active">
-              <a class="nav-link" href="#my-work">Work<span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#my-work">Work</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#about-me">About</a>
@@ -53,7 +56,8 @@
       </nav>
 
       <!-- end Navbar-->
-      
+      /* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
+
       
      
         </div>
@@ -164,7 +168,7 @@
           </div>
           <div class="col-lg-12">
             <label class="text-warning">Your message:</label>
-            <input type="text" class="form-control textarea" name="message" placeholder="Your message here">
+            <textarea class="textarea" rows="10" placeholder="Your message here"></textarea>
           </div>
           <div class="col-lg-2 col-md-4 submit-form">
             
@@ -182,11 +186,7 @@
       <p>© Copyright 2020 Cadi Howley </p>
     </footer>
 
-    <script type="text/javascript">
-      $(window).load(function () {
-        $(".loader").fadeOut("slow");
-      });
-    </script>
+   
 
     <!-- Javascript -->
     <script
@@ -204,6 +204,8 @@
       integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
       crossorigin="anonymous"
     ></script>
+    <script src="/assets/js/scroll-nav.js"></script>
+    <script src="/assets/js/fade-in.js"></script>
 
     <!-- Font Awesome-->
     <script
