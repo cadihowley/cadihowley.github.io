@@ -3,9 +3,9 @@ body {
   font-family: "Fira Sans", sans-serif;
 }
 
+h1,
 h2 {
   font-family: "Fredericka the Great", cursive;
-  margin-bottom: 3%;
 }
 
 h3,
@@ -40,17 +40,12 @@ h6 {
   margin: 30% 10% 10%;
 }
 .banner-heading {
-  font-family: "Fredericka the Great", cursive;
   font-size: 5rem;
   color: #f8f8f8;
 }
 .container-fluid {
   margin: 0;
   padding: 0;
-}
-
-.banner-img {
-  max-width: 100%;
 }
 
 /*My Work Section*/
@@ -66,6 +61,7 @@ h6 {
 .large-row {
   width: 100%;
 }
+
 /*About Me Section*/
 .about-heading {
   font-size: 3.5rem;
@@ -97,6 +93,10 @@ h6 {
 
 /* Contact Section*/
 
+label {
+  margin-bottom: 1.5rem;
+}
+
 .contact-heading {
   margin: 0 15% 5% 0;
   font-size: 3rem;
@@ -113,11 +113,9 @@ h6 {
 }
 
 .form-control {
-  margin-bottom: 5%;
-}
-label {
   margin-bottom: 1.5rem;
 }
+
 /*Footer Section*/
 
 .footer-section {
@@ -127,26 +125,24 @@ label {
 .fa-foot {
   padding: 15px;
 }
+
+/*Responsive features*/
+
 @media (max-width: 766px) {
-  h2 {
-    text-align: center;
-  }
-  .heading-col {
-    text-align: center;
-  }
   .work-heading {
-      text-align: center;
-      margin: 5% 0 10%;
+    text-align: center;
+    margin: 5% 0 10%;
   }
   .about-heading {
-      margin: 5% 0 0;
+    margin: 5% 0 0;
+    text-align: center;
   }
   .about-col {
     text-align: center;
     margin: 0%;
   }
   .contact-heading {
-      text-align: center;
-      margin: 5% 0;
+    text-align: center;
+    margin: 5% 0;
   }
 }
