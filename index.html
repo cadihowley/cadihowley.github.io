@@ -78,8 +78,8 @@
                 <strong class="d-inline-block mb-2 text-warning">Tutorial</strong>
                 <h3 class=" mb-4">Web Development on the iPad</h3>
                
-                <p class="card-text mb-2">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="stretched-link text-warning">Continue reading</a>
+                <p class="card-text mb-2">A comprehensive tutorial intended for beginners who want to use their iPad to learn web development</p>
+                <a href="/writing/tutorial.html" class="stretched-link text-warning">Continue reading</a>
               </div>
               
             </div>
@@ -90,8 +90,8 @@
                 <strong class="d-inline-block mb-2 text-warning">Installation Guide</strong>
                 <h3 class=" mb-4">Installing ScummVM on a Raspberry Pi</h3>
                 
-                <p class="mb-2">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="stretched-link text-warning">Continue reading</a>
+                <p class="mb-2">A comprehensive guide for new users of ScummVM. Produced as part of the Google Season of Docs proposal.</p>
+                <a target="_blank" href="https://scumm-thedocs.readthedocs.io/en/latest/installation/raspberrypi.html" class="stretched-link text-warning">Continue reading</a>
               </div>
               
             </div>
@@ -102,8 +102,8 @@
                 <strong class="d-inline-block mb-2 text-warning">Manual</strong>
                 <h3 class=" mb-4">Flight Crew Operating Manual</h3>
                
-                <p class="card-text mb-2">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="stretched-link text-warning">Continue reading</a>
+                <p class="card-text mb-2">An excerpt from one of a suite of manuals written for an aviation charter company</p>
+                <a target="_blank" href="/assets/files/ops_manual.pdf" class="stretched-link text-warning">Continue reading</a>
               </div>
               
             </div>
@@ -115,31 +115,33 @@
                 <h3 class=" mb-4">Google Season of Docs 2020</h3>
                
                 <p class="card-text mb-2">Proposal to launch a new documentation portal for ScummVM. Prototypes can be found at the below links. </p>
-                <a href="#" class="stretched-link text-warning">ReadtheDocs</a>
-                <a href="#" class="stretched-link text-warning">Docsify</a>
-                <a href="#" class="stretched-link text-warning">Docusaurus</a>
+                <a target="_blank" href="http://scumm-thedocs.readthedocs.io" class="text-warning">ReadtheDocs</a>
+                <a target="_blank" href=https://www.cadihowley.dev/Scumm-ify class="text-warning">Docsify</a>
+                <a target="_blank" href="https://www.cadihowley.dev/ScummDocs" class="text-warning">Docusaurus</a>
               </div>
               
             </div>
           </div>
         </div>
-        
-         
-       
     </section>
 
     <section id="about-me" class="light-section about-section">
       <div class="container-fluid">
-       <h2 class="about-heading">About Me</h2>
+       
           <div class="row">
             <div class="col-md-6 photo-col ">
-              <img class="my-photo" src="assets/img/cadi.jpg">
+              <h2 class="about-heading">About Me</h2>
+              <img class="my-photo" src="assets/img/cadi.png">
             </div>
-            <div class="col-md-6 about-col">
+            <div class="col-md-6 about-col ">
+         
               <p>Airline pilot turned tech writer</p>
               <p>Kiwi</p>
-              <p>Sailor, hiker, explorer</p>
+              <p>Sailor, artist, explorer</p>
               <p>Fledgling web developer</p>
+              <h3 class="cta">If you need technical documentation for your project or business, get in touch!</h3>
+              
+            
             </div>
           </div>
       </div>
@@ -150,25 +152,27 @@
       <h2 class="contact-heading">
         Say Hi!
       </h2>
-      <form>
+      <form action="https://formsubmit.co/054344f21b9a87fcee9fc9cf05a4230f" method="POST">
         <div class="row">
           <div class="col-lg-12">
             <label class="text-warning">Name:</label>
-            <input type="text" class="form-control" placeholder="Name">
+            <input type="text" name="name" class="form-control" placeholder="Name">
           </div>
           <div class="col-lg-12">
             <label class="text-warning">Email:</label>
-            <input type="email" class="form-control" placeholder="Email Address">
+            <input type="email" name="email" class="form-control" placeholder="Email Address">
           </div>
           <div class="col-lg-12">
             <label class="text-warning">Your message:</label>
-            <input type="text" class="form-control textarea" placeholder="Your message here">
+            <input type="text" class="form-control textarea" name="message" placeholder="Your message here">
           </div>
           <div class="col-lg-2 col-md-4 submit-form">
             
-            <input type="submit" class="form-control btn-light " >
+            <input type="submit" name="submit" class="form-control btn-light " >
+          
           </div>
         </div>
+        <input type="hidden" name="_next" value="https://cadihowley.dev/thanks.html">
     </form>
 
     </section>

@@ -73,22 +73,35 @@ h3, h4, h5, h6 {
 }
 /*About Me Section*/
 .about-heading {
-    margin: 0 0 5%;
+ 
     font-size: 3rem;
 }
 
 .about-section {
     padding: 5% 10%;
+    background-image: url(/assets/img/brush.png);
+    background-size: cover;
+    background-repeat: no-repeat;
     
 }
 .my-photo{
     border-radius: 100%;
-    width: 200px;
+    width: 300px;
+    margin: auto;
+    padding: 10%;
     
 
 }
 .photo-col {
     text-align: center;
+}
+
+.about-col {
+    margin: 15% 0 0;
+}
+
+.cta {
+    margin: 10% 0;
 }
 
 /* Contact Section*/
@@ -132,5 +145,6 @@ h3, h4, h5, h6 {
 @media (max-width:766px){
     .about-col{
         text-align: center;
+        margin: 0%;
     }
 }
