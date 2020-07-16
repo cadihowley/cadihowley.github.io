@@ -1,0 +1,82 @@
+/*Common Elements*/
+body {
+  background-color: #f8f8f8;
+  color: #2b2b28;
+  margin: 0px;
+  font-family: "Open Sans", sans-serif;
+}
+section {
+  width: 75%;
+  margin: auto;
+}
+section a {
+  color: #e38b4b;
+  font-weight: bold;
+}
+section a:hover {
+  color: #e3b04b;
+  text-decoration: none;
+}
+
+/*Heading*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Dosis", sans-serif;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 5% 0;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 3% 0;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 3% 0;
+}
+
+h4 {
+  font-size: 1.5rem;
+  margin: 1% 0;
+}
+
+/*Images*/
+
+.gif {
+  max-width: 100%;
+  margin: 5% 10%;
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+  margin: 5% auto;
+}
+
+/*Navbar*/
+.custom-nav {
+  background-color: #2b2b28;
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 400;
+}
+.container-fluid {
+  padding: 0;
+}
+
+/*Alerts*/
+
+.alert {
+  margin: 5% 0;
+}
