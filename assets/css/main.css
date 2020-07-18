@@ -31,7 +31,7 @@ h6 {
 
 /* Banner */
 .banner-row {
-  background-image: url("/assets/img/banner.png");
+  background-image: url("/assets/img/banner.jpeg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -69,12 +69,12 @@ h6 {
 
 .about-section {
   padding: 5% 10%;
-  background-image: url(/assets/img/brush.png);
+  background-image: url(/assets/img/brush.jpeg);
   background-size: cover;
   background-repeat: no-repeat;
 }
 .my-photo {
-  border-radius: 100%;
+ 
   width: 300px;
   margin: auto;
   padding: 10%;
