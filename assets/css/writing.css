@@ -5,6 +5,10 @@ body {
   margin: 0px;
   font-family: "Fira Sans", sans-serif;
 }
+.title {
+  width:75%;
+  margin: 5% auto;
+}
 section {
   width: 75%;
   margin: auto;
@@ -70,9 +74,6 @@ img {
   background-color: #2b2b28;
   font-family: "Fira Sans", sans-serif;
   font-weight: 400;
-}
-.container-fluid {
-  padding: 0;
 }
 
 /*Alerts*/

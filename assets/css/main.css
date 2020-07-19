@@ -38,6 +38,8 @@ h2 {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  height: 100vh;
+  min-height: 620px;
 }
 .heading-col {
   margin: 30% 10% 10%;
@@ -48,21 +50,19 @@ h2 {
 }
 .banner-subheading {
  font-size: 1.2rem;
- margin-left: 1rem;
+ 
 }
 
+.btn {
+  margin: 10% 3% 5% 0;
+}
 
 /*My Work Section*/
 .work-heading {
-  margin-bottom: 7%;
-  margin-right: 5%;
-  text-align: right;
+  margin: 0 5% 7% 0; 
   color: #e3b04b;
 }
 
-.large-row {
-  width: 100%;
-}
 .card-heading{
   color: #e3b04b;
 }
@@ -84,12 +84,9 @@ h2 {
 }
 .my-photo {
   width: 300px;
-  margin: auto;
   padding: 10%;
 }
-.photo-col {
-  text-align: center;
-}
+
 .about-col {
   margin: 15% 0 0;
   font-size: 1rem;
@@ -110,7 +107,6 @@ label {
 
 .contact-heading {
   margin: 0 15% 5% 0;
-  text-align: right;
   color: #e3b04b;
 }
 
@@ -143,24 +139,29 @@ label {
   color: #e59c4f;
 }
 
+/* Resume*/
+.resume-about {
+  width: 50%;
+  margin: 5% 20% 5% 5%;
+}
+
 /*Responsive features*/
 
 @media (max-width: 766px) {
  
   .work-heading {
-    text-align: center;
     margin: 5% 0 10%;
   }
   .about-heading {
     margin: 5% 0 0;
-    text-align: center;
   }
   .about-col {
-    text-align: center;
     margin: 0%;
   }
   .contact-heading {
-    text-align: center;
     margin: 5% 0;
+  }
+  .my-photo {
+    margin: 0% 15%;
   }
 }
