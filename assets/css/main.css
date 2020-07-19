@@ -3,26 +3,27 @@ body {
   font-family: "Fira Sans", sans-serif;
 }
 
-h1,
-h2 {
+h1 {
   font-family: "Fredericka the Great", cursive;
 }
 
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Dosis", sans-serif;
+h2, h3, h4, h5, h6 {
+  font-family: 'Dosis', sans-serif;
 }
-
+h2 {
+  font-size: 4rem;
+}
 .light-section {
   color: #2b2b28;
   background-color: #f1d6ab;
+  padding: 5% 10%;
 }
 .dark-section {
   color: #f8f8f8;
   background-color: #2b2b28;
+  padding: 5% 10%;
 }
+
 /* Nav Bar*/
 
 .custom-nav {
@@ -38,43 +39,48 @@ h6 {
 }
 .heading-col {
   margin: 30% 10% 10%;
+   color: #f8f8f8;
 }
 .banner-heading {
-  font-size: 5rem;
-  color: #f8f8f8;
+  font-size: 5.5rem;
 }
-.container-fluid {
-  margin: 0;
-  padding: 0;
+.banner-subheading {
+ font-size: 1.2rem;
+ margin-left: 1rem;
 }
+
 
 /*My Work Section*/
 .work-heading {
-  margin-bottom: 5%;
-  margin-right: 15%;
-  font-size: 3rem;
+  margin-bottom: 7%;
+  margin-right: 5%;
   text-align: right;
+  color: #e3b04b;
 }
-.work-section {
-  padding: 5% 10%;
-}
+
 .large-row {
   width: 100%;
 }
-
-/*About Me Section*/
-.about-heading {
-  font-size: 3.5rem;
+.card-heading{
+  color: #e3b04b;
+}
+.card-links {
+  color: #e3b04b;
+}
+.card-links:hover {
+  text-decoration: none;
+  color: #e59c4f;
 }
 
+
+/*About Me Section*/
+
 .about-section {
-  padding: 5% 10%;
   background-image: url(/assets/img/brush.jpeg);
   background-size: cover;
   background-repeat: no-repeat;
 }
 .my-photo {
- 
   width: 300px;
   margin: auto;
   padding: 10%;
@@ -82,34 +88,38 @@ h6 {
 .photo-col {
   text-align: center;
 }
-
 .about-col {
   margin: 15% 0 0;
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
 .cta {
   margin: 10% 0;
 }
 
+
 /* Contact Section*/
 
 label {
   margin-bottom: 1.5rem;
+  color: #e3b04b;
 }
 
 .contact-heading {
   margin: 0 15% 5% 0;
-  font-size: 3rem;
   text-align: right;
+  color: #e3b04b;
 }
-.contact-section {
-  padding: 5% 10%;
-}
+
 .textarea {
   width: 100%;
+  padding: 2%;
+  
 }
 .submit-form {
   margin: 5% auto;
+  padding: 2%;
 }
 
 .form-control {
@@ -124,11 +134,17 @@ label {
 }
 .fa-foot {
   padding: 15px;
+  color: #2b2b28;
+}
+.fa-foot:hover {
+  text-decoration: none;
+  color: #e59c4f;
 }
 
 /*Responsive features*/
 
 @media (max-width: 766px) {
+ 
   .work-heading {
     text-align: center;
     margin: 5% 0 10%;
