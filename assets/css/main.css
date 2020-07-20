@@ -7,8 +7,11 @@ h1 {
   font-family: "Fredericka the Great", cursive;
 }
 
- h3, h4, h5, h6 {
-  font-family: 'Dosis', sans-serif;
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Dosis", sans-serif;
   font-weight: 300;
 }
 h2 {
@@ -43,27 +46,27 @@ h2 {
 }
 .heading-col {
   margin: 30% 10% 10%;
-   color: #f8f8f8;
+  color: #f8f8f8;
 }
 .banner-heading {
   font-size: 6rem;
 }
 .banner-subheading {
- font-size: 1.2rem;
- 
+  margin-left: 1%;
+  font-size: 1.2rem;
 }
 
 .btn {
-  margin: 10% 3% 5% 0;
+  margin: 10% 3% 5% 5px;
 }
 
 /*My Work Section*/
 .work-heading {
-  margin: 0 5% 7% 0; 
+  margin: 0 0 7% 0;
   color: #e3b04b;
 }
 
-.card-heading{
+.card-heading {
   color: #e3b04b;
 }
 .card-links {
@@ -73,7 +76,6 @@ h2 {
   text-decoration: none;
   color: #e59c4f;
 }
-
 
 /*About Me Section*/
 
@@ -97,7 +99,6 @@ h2 {
   margin: 10% 0;
 }
 
-
 /* Contact Section*/
 
 label {
@@ -106,14 +107,13 @@ label {
 }
 
 .contact-heading {
-  margin: 0 15% 5% 0;
+  margin: 0 0 5% 0;
   color: #e3b04b;
 }
 
 .textarea {
   width: 100%;
   padding: 2%;
-  
 }
 .submit-form {
   margin: 5% auto;
@@ -148,7 +148,6 @@ label {
 /*Responsive features*/
 
 @media (max-width: 766px) {
- 
   .work-heading {
     margin: 5% 0 10%;
   }
