@@ -47,12 +47,13 @@
                     </li>
                 </ul>
         </nav>
+        
     </header>
     <main>
         <article >  
             <section >
             <header> <h1 class="title">Tutorial: Web development on the iPad</h1></header> 
-            
+            <hr>
                 <p>While there are online integrated development environments (IDE) out there (such as GitPod or Codesandbox), these still have some limitations on the iPad - the biggest one being the inability to copy and paste.
                 </p>
                 <p>In this tutorial we'll be using the iPad to interface with a Raspberry Pi 4 running Code-OSS as the IDE. Code-OSS is the open-source code Microsoft's VSCode is based on, so it may look familiar to you!
@@ -60,6 +61,7 @@
                 <p>We'll begin by setting up a Raspberry Pi headless (no monitor attached) to run Linux Ubuntu 20.04 with the LXDE desktop environment. We'll access our Raspberry Pi from the iPad through a combination of the Shelly terminal app, Microsoft's Remote Desktop app, and the Files app. 
                 </p>
                 <header><h2>What you'll need:</h2></header>
+                <hr>
                 <ul>
                     <li>A Raspberry Pi 4 with at least 4GB RAM</li>
                     <li>A MicroSD card, minimum 16GB</li>
@@ -76,6 +78,7 @@
 
             <section>
                 <header><h2 >Installing Linux </h2></header>
+                <hr>
                 <p>In this step we will install Ubuntu 20.04 Server to the Raspberry Pi</p>
 
                 <header><h3> Preparing the SD card:</h3></header>
@@ -89,7 +92,8 @@
 
 
             <section>
-                <header><h2> Connecting the Pi to the internet:</h2></header>
+                <header><h2> Connecting the Pi to the internet</h2></header>
+                <hr>
                 <p>There are two ways to connect the Pi to the internet; directly to the router with an ethernet cable, or via WIFI. </p>
                 <p>If you are connecting your Raspberry Pi to the network via ethernet cable, you can skip to the <a href="#booting-up">next step</a> </p>
                 <p>To enable the Raspberry Pi to connect to the WIFI network on startup, we will need to add some additional information to the configuration files. </p>
@@ -107,27 +111,30 @@ wifis:
     &lt;wifi network name>:
      password: "&lt;wifi password>"</pre>
 
-                        <div class="alert alert-warning">
-                            <h4>Important</h4>
-                            <p > If your wifi network has spaces in its name, use quotation marks around the network name.</p>
-                        </div>
+                        
                     </li>
 
                     <li>Save the file, and remove the SD Card (and SSD drive) from your computer. </li>
                 </ol>
+                <div class="custom-alert warning-alert">
+                    <h4>Important</h4>
+                    <p > If your wifi network has spaces in its name, use quotation marks around the network name.</p>
+                </div>
              </section>
 
             <section id="booting-up">
                 <header><h2>Booting up the Raspberry Pi</h2></header>
+                <hr>
                 <p>It's time to power up the Pi! Insert the microSD card, plug in the solid-state drive (if using) and plug in the Pi with a USB-C power cable. It takes a minute or so before Ubuntu boots and the Pi connects to the network. </p>
             </section>
 
 
             <section>
                 <header><h2 >Accessing the Raspberry Pi</h2></header>
-                <p>We will need to find the IP address of the Raspberry Pi before we can access it. For more information on how to find the IP addresses of devices on your network, see this helpful <a href="https://helpdeskgeek.com/how-to/determine-computers-connected-to-wireless-network/">how-to article</a>
+                <hr>
+                <p>We will need to find the IP address of the Raspberry Pi before we can access it. For more information on how to find the IP addresses of devices on your network, see this helpful <a href="https://helpdeskgeek.com/how-to/determine-computers-connected-to-wireless-network/">how-to article.</a>
                 </p>
-                <div class="alert alert-dark">
+                <div class="custom-alert tip-alert">
                     <h4>Tip</h4>
                     <p>It is a good idea to ensure that your router assigns a static IP address to your Raspberry Pi, so you don't have to look up the IP address every time the Pi reconnects to the network. For a great explanation on how to assign static IP addresses, see <a href="https://au.pcmag.com/news/65062/how-to-set-up-a-static-ip-address">this article.</a></p>
                 </div>
@@ -137,23 +144,21 @@ wifis:
                     <li>On the main pane in the SSH Server Address field, type ubuntu@xxx.xxx.x.xxx, replacing the x's with your Pi's IP address. </li>
                     <li>Leave the port at 22, and press <strong>Connect</strong>.</li>
                     <li>When you are asked to confirm the connection, type yes, and then press Return (<kbd>&#8629;</kbd>)  on your keyboard. </li>
-                    <li> default password is 'ubuntu'. You will be prompted to change this the first time you connect. The cursor will not move as you type the passwords. </li>
+                    <li>The default password is 'ubuntu'. You will be prompted to change this the first time you connect. The cursor will not move as you type the passwords. </li>
+                    
                 </ol>
+                You must enable location settings to run in the background, otherwise Shelly will close the connection any time you are not in the app.
                 <img src="/assets/img/shelly.gif" class="gif">
-                <div class="alert alert-dark">
+                <div class="custom-alert tip-alert">
                     <h4 class="smallest-heading">Tip</h4> 
                     <p>To save your log in credentials, click on <strong>Settings</strong> on the right side of the Shelly app. In the username field, type <code class="language-bash">ubuntu</code> and in the password field, enter the password you set up during the previous step. Now Shelly will automatically use those credentials to log you in every time you open the connection.
                 </div>
-                <div class="alert alert-warning">
-                    <h4>Important</h4>
-                     <p>You must enable location settings to run in the background, otherwise Shelly will close the connection any time you are not in the app.
-                    </p>
-                </div>
+                
                 <p>When you start a new connection, you should see:</p>
                 <pre class="language-bash">ubuntu@ubuntu:~$</pre>
                 <p>This is the command line. The <code class="language-bash">~</code> means you are in  the home directory. For more information on the command line and how it works, this <a target="_blank" href="https://ubuntu.com/tutorials/command-line-for-beginners#1-overview">excellent article</a>is a good reference. </p>
-                <div class="alert alert-warning">
-                    <h4 >Important</h4>
+                <div class="custom-alert danger-alert">
+                    <h4 >Warning</h4>
                     <p>Before proceeding further:</p>
                     <p>If you are using an SSD, it is important to ensure that the Raspberry Pi will use the SSD instead of the microSD when it boots.</p> 
                     <p>When you start a new connection to the Pi, there is a line in the terminal that says <code class="language-bash">Usage of /:</code>. This shows how much space is available on the drive. Use this information to see which drive it has booted into.</p>
@@ -171,7 +176,8 @@ wifis:
 
 
             <section >
-                <header><h2 class="sub-heading">Installing a desktop environment</h2></header>
+                <header><h2>Installing a desktop environment</h2></header>
+                <hr>
                 <p>Our Raspberry Pi is up and running, with Ubuntu Server as the operating system - but we want to have a graphical interface so that we can run Code-OSS remotely from the iPad.</p> 
                 <p>In the Shelly app, use the existing connection or start a new one, using the details you entered before. 
                 </p>
@@ -189,7 +195,8 @@ wifis:
 
             <section>
         
-                <header><h2 class="sub-heading">Using the Pi as a Remote Desktop</h2></header>
+                <header><h2>Using the Pi as a Remote Desktop</h2></header>
+                <hr>
                 <p>We now have Ubuntu running the LXDE desktop. But we still can't see it!</p>
 
                 <p> we need to install xrdp on the Pi.</p>
@@ -212,19 +219,21 @@ wifis:
             </section>
 
             <section>
-                <header><h2>Installing useful tools</h2></header>
+                <header><h2>Installing some useful tools</h2></header>
+                <hr>
                 <p>LXDE is a  bare-bones desktop, with very few additional programs installed. This is great for the Raspberry Pi as it's extremely lightweight. However, to use this as our web development machine we will need to install a few things first!</p>
 
                 <header><h3 >Code-OSS</h3></header>
+                <hr>
                 <p>To install Code-OSS, run the following on the command line. You can do this via the Remote Desktop, in the Terminal application that comes with LXDE, or via Shelly.</p>
 
                 <pre class="language-bash">sudo -s</pre>
                 <pre class="language-bash">. &lt;( wget -O - https://code.headmelted.com/installers/apt.sh )</pre>
-                <div class="alert alert-dark">
-                    <h4>Tip</h4>
+                
+                    
                     <p>The <code class="language-bash">sudo -s</code>command switches the entire terminal session into "superuser", or root, mode. In general, you should be careful using this command, as some things should not be done in superuser mode. </p>
-                </div>
-                <div class="alert alert-dark">
+               
+                <div class="custom-alert tip-alert">
                     <h4>Tip</h4>
                     <p>After install, you may get a warning message about a missing GPG key when running the <code class="language-bash">apt update</code> command, something like: </p>
                     <pre class="language-bash">The following signatures couldn't be verified because the public key is not available: 
@@ -233,6 +242,7 @@ NO_PUBKEY 2696BFC88BAF9A6F</pre>
                     <pre class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv-keys 8BAF9A6F</pre>
                 </div>
                 <header><h3 >Samba</h3></header>
+                <hr>
                 <ul>
                     <li>A Samba server allows you to access the files on your Raspberry Pi through the Files app on your iPad.</li>
                 </ul>
@@ -260,6 +270,7 @@ NO_PUBKEY 2696BFC88BAF9A6F</pre>
                  <p>To access the files in your home folder from the iPad, open the files app. On the upper left hand side, press the More Options icon (circle with three dots). Select <strong>Connect to Server</strong>. In the server field, type in the Pi's IP address. Tick Registered User, and enter the username and password you set in Samba. Select Next, and you should see your Pi's home folder. </p>
                 <p>Because we set the permissions for the folder to be both read and write, you can create, delete and edit files and folders on your Pi directly from your iPad. </p>
                 <header><h3>Node.js and npm (node package manager)</h3></header>   
+                <hr>
                 <ul>
                     <li>Node.js is a cross-platform javascript environment, used to build back-end and front-end applications.</li>
                     <li>npm is used to install a variety of static-site generators, themes, plugins, and much more.

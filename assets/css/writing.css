@@ -6,7 +6,6 @@ body {
   font-family: "Fira Sans", sans-serif;
 }
 .title {
- 
   margin: 5% auto;
 }
 section {
@@ -70,6 +69,7 @@ img {
 }
 
 /*Navbar*/
+
 .custom-nav {
   background-color: #2b2b28;
   font-family: "Fira Sans", sans-serif;
@@ -78,10 +78,51 @@ img {
 
 /*Alerts*/
 
-.alert {
-  margin: 5% 0;
+.info-alert {
+  border-color: #007bff;
 }
-@media (max-width:766px){
+.info-alert:before {
+  content: url(/assets/img/info.svg);
+}
+.tip-alert {
+  border-color: #42b983;
+}
+.tip-alert:before{
+  content: url(/assets/img/tip.svg);
+}
+.warning-alert {
+  border-color: #f4cd00;
+}
+.warning-alert:before {
+  content: url(/assets/img/warning.svg);
+}
+.danger-alert {
+  border-color: #f66;
+}
+.danger-alert:before {
+  content: url(/assets/img/danger.svg);
+  
+}
+.custom-alert {
+  background-color: #e5e5e5;
+  padding: 0.1rem 1.5rem;
+  border-left-width: 0.5rem;
+  border-left-style: solid;
+  position: relative;
+  border-bottom-right-radius: 2px;
+  border-top-right-radius: 2px;
+  margin: 1rem 0;
+}
+.custom-alert:before {
+  
+  width: 25px;
+  height: 25px;
+  left: -16px;
+  box-sizing: border-box;
+  position: absolute;
+  top: 19px;
+}
+@media (max-width: 766px) {
   section {
     width: 70%;
   }
