@@ -42,7 +42,7 @@ h2 {
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
-  min-height: 620px;
+  min-height: 750px;
 }
 .heading-col {
   margin: 30% 10% 10%;
@@ -208,6 +208,9 @@ label {
 /*Responsive features*/
 
 @media (max-width: 766px) {
+  .heading-col{
+    margin: 35% 10% 10%;
+  }
   .work-heading {
     margin: 5% 0 10%;
   }
