@@ -107,7 +107,7 @@ h4 {
 /* Banner*/
 
 #header {
-  background-image: url("/assets/1.jpg");
+  background-image: url("/verus/assets/1.jpg");
   margin-left: 5%;
 }
 hr {
@@ -131,7 +131,7 @@ hr {
 /*Let us Help You*/
 
 #help {
-  background-image: url("/assets/7.jpg"); 
+  background-image: url("/verus/assets/7.jpg"); 
   
 }
 
@@ -147,7 +147,7 @@ hr {
 /*About Us*/
 
 #about {
-  background-image: url("/assets/2.jpg");
+  background-image: url("/verus/assets/2.jpg");
 }
 
 .about-col {
