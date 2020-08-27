@@ -73,7 +73,7 @@ h2 {
   margin: 5% 0 10%;
 }
 h3 {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: bold;
 }
 h4 {
@@ -113,14 +113,14 @@ h4 {
 hr {
   border: solid;
   border-width: 5px;
-  width: 80%;
+  width: 140%;
   position: relative;
-  right: 20%;
+  right: 50%;
   border-color: #a59385;
 }
 
 .header-col {
-  margin-top: 10%;
+  margin: 10% 5%;
 }
 
 .btn {
@@ -128,7 +128,7 @@ hr {
   padding: 10px;
 }
 
-/*Let us Help You*/
+/*How I Can Help You*/
 
 #help {
   background-image: url("/verus/assets/7.jpg"); 
@@ -140,14 +140,17 @@ hr {
   border-color: #a59385;
   border-width: 1rem;
   background-color: #1e2629;
-  padding: 7%;
+  padding: 5%;
   
 }
-
-/*About Us*/
+.help-list {
+  margin-left: 10%;
+}
+/*About Verus Chambers*/
 
 #about {
   background-image: url("/verus/assets/2.jpg");
+  
 }
 
 .about-col {
@@ -159,16 +162,17 @@ hr {
   border-color: #a59385;
 }
 
-/*Meet the Team*/
+/*Meet Maria*/
 
 #team {
   background-color: black;
-
+  
 }
 
 .photo-col {
   padding: 7%;
   text-align: center;
+  background-color: #1e2629;
 }
 
 .bio-photo {
@@ -180,7 +184,7 @@ hr {
 
 .bio-col {
   padding: 7%;
-  background-color: #1e2629;
+  background-color: black;
 }
 
 /*Contact Us*/
@@ -240,7 +244,7 @@ label, .form-control {
 .copyright {
   color: #a59385;
   padding: 2%;
-  margin: 5% 0 0 0;
+  margin: 5% 0 5% 0;
 }
 .footer-link, .footer-link:hover {
   color: white;
@@ -258,6 +262,12 @@ label, .form-control {
     margin: auto;
     margin-bottom: 10%;
   }
+  hr{
+    display: none;
+  }
+ h1 {
+   max-width: 50%;
+ }
 }
 
 @media (max-width: 768px) {
